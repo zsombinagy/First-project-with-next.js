@@ -1,4 +1,7 @@
 import "../styles/globals.sass"
+import Head from "next/head"
+
+
 
 
 
