@@ -2,6 +2,10 @@
     width: 100%
     background: #131313
     height: 80px
+    position: fixed
+    
+
+
     
     
     
@@ -15,6 +19,9 @@
         display: flex
         justify-content: space-between
         align-items: center
+        
+
+        
         
     .links__container
         font-size: 1.2rem
@@ -35,8 +42,8 @@
 
     li a 
         position: relative
-        text-transform: uppercase
-        padding: 0.5rem 2rem 0.5rem
+        font-size: 1.5rem
+        padding: 0.5rem 1rem 0.5rem
         margin: 0rem 1rem 0rem 
         letter-spacing: 2px
         background: #131313
@@ -55,32 +62,37 @@
         background: #fff
         color: #131313
         opacity: 1
-        font-size: 1.3rem
+        font-size: 1.5rem
         transition: 0.3s
         
 
     .title a
-        color: #FBD786
-        padding: 4rem
+        
+        padding: 1rem
         font-size: 2.9rem    
         text-decoration: none
+        color: transparent
+        
+        background-image: linear-gradient(to right, #751fe6, #FBD786, #f7797d)
+        -webkit-background-clip: text
+        animation: animate 5s linear infinite
+        background-size: 1000%
+
+
+        @keyframes animate
+            0%
+                background-position: 0% 100%
+            50%
+                background-position: 100% 0% 
+            100%
+                background-position: 0% 100%
+                
            
-            
-
-
-        
-
-
-        
-        
-        
-
-   
-          
 
 
 
-        
+
+
     
 
 
