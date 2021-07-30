@@ -1,10 +1,20 @@
 import Navbar from "../comps/Navbar"
 import styles from "../styles/Home.module.sass"
 import Footer from "../comps/Footer"
+import Head from "next/head"
+
 
 export default function Home() {
   return (
+
+
     <>
+    <Head>
+      <title>Pegasus | Home</title>
+
+    </Head>
+
+
     <Navbar />
     <div className={styles.homepage}>
       <div className={styles.main}>
@@ -35,6 +45,7 @@ export default function Home() {
           </div>
       </div>
     </div>
+    <Footer />
    
    
 
