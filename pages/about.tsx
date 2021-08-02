@@ -1,3 +1,4 @@
+import Footer from "../comps/Footer"
 import Navbar from "../comps/Navbar"
 import styles from "../styles/About.module.sass"
 
@@ -17,6 +18,7 @@ const About = () => {
                     Its flagship product is Pegasus, spying software – or spyware – that targets iPhones and Android devices. Once a phone is infected, a Pegasus operator can secretly extract chats, photos, emails and location data, or activate microphones and cameras without a user knowing.</p>
             </div>
         </div>
+        <Footer />
 
         
         </>
