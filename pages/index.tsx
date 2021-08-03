@@ -11,6 +11,7 @@ export default function Home() {
     <>
     <Head>
       <title>Pegasus | Home</title>
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap" rel="stylesheet"></link>
 
     </Head>
 

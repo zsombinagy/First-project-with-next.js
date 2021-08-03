@@ -23,7 +23,7 @@ const Members = ({members}) => {
     <div className={styles.main}>
       {members.map(member => (
         <div key={member.id}>
-          <Link href="/">
+          <Link href={'/members/' + member.id}>
             <button className={styles.btn}>
             <a className={styles.single}>
               {member.name}
