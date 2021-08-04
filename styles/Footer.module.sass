@@ -7,31 +7,12 @@
     width: 100%
     font-family: "Open Sans"
     color: #fff
-    height: 40vh
+    
     text-align: center
     padding-top: 20px
 
-    .content 
-        display: flex
-        justify-content: space-between
-        padding: 20px
-
-        h3 
-            font-size: 2.5rem
-
-        p
-            font-size: 1.3rem
 
 
-    .socials
-        list-style: none
-        display: flex
-        align-items: center
-        justify-content: center
-        margin-right: 1rem
-
-    a 
-        margin-right: 30px
 
 
     
@@ -48,10 +29,52 @@
         cursor: pointer
 
     
+@media screen and ( min-width: 760px )
+    .content 
+        display: flex
+        justify-content: space-between
+        
+    .content 
+        padding: 20px
+
+        h3 
+            font-size: 2.5rem
+
+        p
+            font-size: 1.3rem
+    .socials
+        list-style: none
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-right: 1rem
+
+    .socials    a 
+        margin-right: 30px
+    
+    .footer_content
+        height: 40vh
         
 
-        
+@media screen and ( max-width: 760px )
+    .content
+        justify-content: center
 
+        h3
+            font-size: 1.5rem
+            margin-bottom: 1rem
+        
+        p
+            margin-bottom: 1rem
+    
+    .socials
+        list-style: none
+        display: flex
+        align-items: center
+        justify-content: center
+        
+        a 
+            margin: 0 0.2rem 0
  
         
 

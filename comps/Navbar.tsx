@@ -22,7 +22,7 @@ const Navbar = () => {
                         <ul>
                             <li><Link  href="/"><a className={styles.link} id={styles.home}>Home</a></Link></li>
                             <li><Link  href="/about"><a className={styles.link}>About</a></Link></li>
-                            <li><Link  href="/article"><a className={styles.link}>Article</a></Link></li>
+                            <li><Link  href="/blog"><a className={styles.link}>Blog</a></Link></li>
                             <li><Link  href="/members"><a className={styles.link}>Members</a></Link></li>
                         
                         </ul>
