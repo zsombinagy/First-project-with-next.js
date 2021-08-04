@@ -5,7 +5,7 @@
     text-align: center
     justify-content: center
     width: 100%
-    height: 100vh
+    
     color: #fff
     margin: 0
     padding: 0
@@ -13,21 +13,15 @@
     margin-top: 80px
 
     .h1
-        border-bottom: 2px solid #fff
+        
         width: 50%
         margin:7% 25% 0
-        font-size: 2rem 
         
     .text 
-        margin: 2px
+        
     .h2 
-        font-size: 3rem
+        
         color: $deep-purple
-
-    .email
-        margin: 50px 0 10px
-        font-size: 5rem
-        letter-spacing: 4px
 
     .address 
         margin: 40px 0 0
@@ -52,3 +46,39 @@
         
 
 
+@media screen and ( max-width: 760px )
+
+    .data
+        height: 70vh
+
+
+    .h1
+        font-size: 1rem
+        border-bottom: 2px solid #fff
+
+    .h2
+        font-size: 2rem
+        margin: 20px
+
+    .email
+        margin: 40px 0 40px
+        font-size: 1.5rem
+        letter-spacing: 1px
+
+
+
+@media screen and ( min-width: 760px  )
+
+    .email
+        margin: 50px 0 10px
+        font-size: 5rem
+        letter-spacing: 4px 
+    .h1
+        font-size: 2rem
+        border-bottom: 2px solid #fff
+    .h2    
+         font-size: 3rem
+         margin: 2px
+
+    .data
+        height: 100vh

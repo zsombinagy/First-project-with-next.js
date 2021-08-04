@@ -22,7 +22,7 @@ const Members = ({members}) => {
     <Navbar />
     <div className={styles.main}>
       {members.map(member => (
-        <div key={member.id}>
+        <div key={member.id} className={styles.member}>
           <Link href={'/members/' + member.id}>
             <button className={styles.btn}>
             <a className={styles.single}>
