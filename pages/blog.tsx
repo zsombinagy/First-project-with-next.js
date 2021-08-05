@@ -4,105 +4,82 @@ import Navbar from "../comps/Navbar";
 import { ListTemplate } from "../src/ListTemplate";
 import styles from "../styles/Article.module.sass";
 
-/* class Blogs {
-    constructor (
-        public title: string,
-        public body: string,
-        public author: string
-        ){}
-
-    format() {
-        return ` This Book${this.title} writted by ${this.author}, about ${this.body}`
-    }
+class Blogs {
+    constructor(
+        private title: string,
+        private body: string,
+        private author: string
+    ) {}
 }
 
-let blog: Blogs[] = [];
-interface HasFormatter {
-    format(): string
-} */
-
-
-
+let blog: Blogs[] = []
 
 
 const Article = () => {
-/* const [title, setTitle] = useState("");
+const [title, setTitle] = useState("");
 const [body, setBody] = useState("");
 const [author, setAuthor] = useState("");
 const [isPending, setIsPending] = useState(false);
-
-const ul = document.querySelector("ul")!;
-
-const list = new ListTemplate("ul");
-let doc: HasFormatter
-
-function rendering () {
-    doc = new Blogs(title, body, author)
-} */
-/* 
+const [articles, setArticles] = useState([])
+const blogs = {title, body, author };
 
 
 const handleSubmit = (e) =>{
     e.preventDefault();
-    const blog = {title, body, author };
-
+    
     setIsPending(true);
 
-    console.log(render)
-}
-     */
-
-
-
+    setArticles((val) => {
+        val.push(blogs)
+        setIsPending(false)
+        return val
         
 
-
+    })
+    
+}  
 
     return (
-
-
         <>
             <Navbar />
-
-
-
-
-
-
-
-
-
             <div className={styles.create}>
-                <ul>
-
-                </ul>
-
+                <div className={styles.blogs}>
+                    {articles.map(blog =>(
+                        <div  className={styles.blog}>
+                            <h1>{blogs.title}</h1>
+                            <h3>{blogs.author}</h3>
+                            <p>{blogs.body}</p>
+                        </div>
+                    ))}
+                </div>
                 <h2>Add a New Blog</h2>
-                <form /* onSubmit={handleSubmit} */>
+                <form onSubmit={handleSubmit}>
                     <label>Blog title:</label>
                     <input 
                         type="text"
                         required
-/*                         value={title}
-                        onChange={(e) => setTitle(e.target.value)} */
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Please write a title..."
                     />
                     <label>Blog body:</label>
                     <textarea
                         required
-/*                         value={body}
-                        onChange={(e) => setBody(e.target.value)} */
+                        value={body}
+                        onChange={(e) => setBody(e.target.value)}
+                        placeholder="Please write a body..."
                    ></textarea>
                    <label >Blog author:</label>
                    <select
-        /*                 value={author}
-                        onChange={(e) => setAuthor(e.target.value)} */
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
                     >
                        <option value="mario">Mario</option>
                        <option value="yoshi">Yoshi</option>
                    </select>
                    
-{/*                    { !isPending && <button>Add blog</button>}
-                   { isPending && <button disabled>Adding blog...</button>} */}
+                  { !isPending && <button>Add blog</button>}
+                   { isPending && <button disabled>Adding blog...</button>}
 
                 </form>
 
