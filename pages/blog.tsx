@@ -2,6 +2,7 @@ import { useState } from "react";
 import Footer from "../comps/Footer";
 import Navbar from "../comps/Navbar";
 import { ListTemplate } from "../src/ListTemplate";
+import Arweave from "arweave";
 import styles from "../styles/Article.module.sass";
 
 class Blogs {
@@ -16,39 +17,58 @@ let blog: Blogs[] = []
 
 
 const Article = () => {
-const [title, setTitle] = useState("");
-const [body, setBody] = useState("");
-const [author, setAuthor] = useState("");
-const [isPending, setIsPending] = useState(false);
-const [articles, setArticles] = useState([])
-const blogs = {title, body, author };
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
+    const [author, setAuthor] = useState("");
+    const [isPending, setIsPending] = useState(false);
+    const [articles, setArticles] = useState<{ title: string, body: string, author: string}[]>([])
 
 
-const handleSubmit = (e) =>{
-    e.preventDefault();
-    
-    setIsPending(true);
+    const handleSubmit = async (e: MouseEvent) =>{
+        e.preventDefault();
+        
+        setIsPending(true);
 
-    setArticles((val) => {
-        val.push(blogs)
-        setIsPending(false)
-        return val
+        const client = new Arweave({
+            host: "arweave.net",
+            port: 443,
+            protocol: "https",
+        });
+
+        const transaction = await client.createTransaction({
+            data: body,
+        });
+
+        transaction.addTag("Content-Type", "text/plain");
+        transaction.addTag("App-Name", "Zsomblog");
+        transaction.addTag("Blog-Name", title);
+        transaction.addTag("Blog-Author", author);
+
+        await client.transactions.sign(transaction);
+
+
+
+
+        setIsPending(false);
+        setBody("");
+        setAuthor("");
+        setTitle("");
         
 
-    })
-    
-}  
+        
+    }  
+
 
     return (
         <>
-            <Navbar />
+            
             <div className={styles.create}>
                 <div className={styles.blogs}>
                     {articles.map(blog =>(
                         <div  className={styles.blog}>
-                            <h1>{blogs.title}</h1>
-                            <h3>{blogs.author}</h3>
-                            <p>{blogs.body}</p>
+                            <h1>{blog.title}</h1>
+                            <h3>{blog.author}</h3>
+                            <p>{blog.body}</p>
                         </div>
                     ))}
                 </div>
@@ -84,7 +104,7 @@ const handleSubmit = (e) =>{
                 </form>
 
             </div>
-            <Footer />
+            
 
         </>
 

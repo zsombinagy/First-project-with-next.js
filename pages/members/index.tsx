@@ -16,10 +16,12 @@ export const getStaticProps = async () => {
 
 }
 
+
+
 const Members = ({members}) => {
   return(
     <>
-    <Navbar />
+    
     <div className={styles.main}>
       {members.map(member => (
         <div key={member.id} className={styles.member}>
@@ -34,7 +36,7 @@ const Members = ({members}) => {
         </div>
       ))}
     </div>
-    <Footer />
+    
 
     </>
   )

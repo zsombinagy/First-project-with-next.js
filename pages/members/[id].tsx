@@ -35,7 +35,7 @@ export const getStaticPaths = async () => {
   const Details = ({ member }) => {
     return (
       <>
-        <Navbar />
+        
 
           <div className={styles.data}>
             <div className={styles.h1}>
@@ -54,7 +54,7 @@ export const getStaticPaths = async () => {
 
 
 
-        <Footer />
+        
 
       </>
 

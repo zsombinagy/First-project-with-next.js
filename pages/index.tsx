@@ -16,7 +16,7 @@ export default function Home() {
     </Head>
 
 
-    <Navbar />
+    
     <div className={styles.homepage}>
       <div className={styles.main}>
         <h1 className={styles.h1}>Do you want <br /> to listen <br /> in on other people's <br /> phone conversations? </h1>
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
       </div>
     </div>
-    <Footer />
+    
    
    
 
