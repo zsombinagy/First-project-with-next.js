@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Footer from "../comps/Footer";
 import Navbar from "../comps/Navbar";
-import { ListTemplate } from "../src/ListTemplate";
 import Arweave from "arweave";
 import styles from "../styles/Article.module.sass";
 
